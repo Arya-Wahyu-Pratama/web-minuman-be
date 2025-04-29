@@ -7,14 +7,11 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix('api');
   app.enableCors({
-    origin: 'https://restoran-fe.vercel.app', // ganti dengan domain frontend kamu
+    origin: 'https://web-minuman-fe.vercel.app/', // ganti dengan domain frontend kamu
     methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
   });
-  
-  
-   // Tambahkan middleware untuk set header Allow-Private-Network
    app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Private-Network', 'true');
     next();
@@ -26,13 +23,10 @@ async function bootstrap() {
     .addSecurityRequirements('bearer')
     .build();
   const document = SwaggerModule.createDocument(app, config);
-  // Serve raw OpenAPI JSON
   app.use('/api/swagger-json', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.send(document);
   });
-
-  // Serve Swagger UI HTML (from CDN)
   app.use('/api/swagger', (req, res) => {
     res.send(`
       <!DOCTYPE html>
