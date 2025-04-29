@@ -4,7 +4,6 @@ export class CreateInitialTables1681994400000 implements MigrationInterface {
   name = 'CreateInitialTables1681994400000';
 
   public async up(queryRunner: QueryRunner): Promise<void> {
-    // Tabel users
     await queryRunner.query(`
       CREATE TABLE "users" (
         "id" SERIAL PRIMARY KEY,
@@ -18,7 +17,6 @@ export class CreateInitialTables1681994400000 implements MigrationInterface {
       )
     `);
 
-    // Tabel menu
     await queryRunner.query(`
       CREATE TABLE "menu" (
         "id" SERIAL PRIMARY KEY,
@@ -29,7 +27,6 @@ export class CreateInitialTables1681994400000 implements MigrationInterface {
       )
     `);
 
-    // Tabel cart
     await queryRunner.query(`
       CREATE TABLE "cart" (
         "id" SERIAL PRIMARY KEY,
@@ -41,7 +38,6 @@ export class CreateInitialTables1681994400000 implements MigrationInterface {
       )
     `);
 
-    // Tabel orders
     await queryRunner.query(`
       CREATE TABLE "orders" (
         "id" SERIAL PRIMARY KEY,
@@ -55,7 +51,6 @@ export class CreateInitialTables1681994400000 implements MigrationInterface {
       )
     `);
 
-    // Tabel order_items (relasi antara order dan menu)
     await queryRunner.query(`
       CREATE TABLE "order_items" (
         "id" SERIAL PRIMARY KEY,

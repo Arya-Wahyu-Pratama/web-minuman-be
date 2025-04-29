@@ -1,6 +1,5 @@
-// src/user/user.entity.ts
 import { Cart } from 'src/cart/cart.entity';
-import { Order } from 'src/order/order.entity'; // <-- pastikan Order diimpor dengan benar
+import { Order } from 'src/order/order.entity';
 import {
   Column,
   CreateDateColumn,
@@ -36,11 +35,9 @@ export class User {
   @UpdateDateColumn()
   updated_at: Date;
 
-  // Relasi ke Cart
   @OneToMany(() => Cart, (cart) => cart.user)
   carts: Cart[];
 
-  // Relasi ke Order
   @OneToMany(() => Order, (order) => order.user)
-  orders: Order[]; // <-- relasi ke entitas Order
+  orders: Order[];
 }

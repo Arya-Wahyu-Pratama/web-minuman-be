@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { CreateMenuDto } from '../menu/create-menu-dto';
-import { Menu } from './menu.entity';  // Mengimpor entity Menu
+import { Menu } from './menu.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
@@ -17,6 +17,6 @@ export class MenuService {
   }
 
   async findAll(): Promise<Menu[]> {
-    return this.menuRepository.find(); // Fetch semua data menu dari database
+    return this.menuRepository.find();
   }
 }

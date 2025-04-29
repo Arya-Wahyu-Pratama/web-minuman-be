@@ -1,7 +1,6 @@
-// src/order/order-item.entity.ts
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
-import { Order } from './order.entity'; // Ensure the Order entity is imported
-import { Menu } from 'src/menu/menu.entity'; // Ensure the Menu entity is imported
+import { Order } from './order.entity'; 
+import { Menu } from 'src/menu/menu.entity';
 
 @Entity('order_items')
 export class OrderItem {
@@ -18,5 +17,5 @@ export class OrderItem {
   quantity: number;
 
   @Column()
-  price: number; // Harga per item
+  price: number;
 }

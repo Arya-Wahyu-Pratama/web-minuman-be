@@ -15,10 +15,10 @@ export class Order {
   totalPrice: number;
 
   @Column()
-  status: string; // status seperti "pending", "completed", dll
+  status: string;
 
-  @Column({ nullable: true })  // Menambahkan field paymentMethod
-  paymentMethod: string;  // Misalnya: 'credit card', 'paypal', dll.
+  @Column({ nullable: true })  
+  paymentMethod: string;
 
   @Column()
   deliveryAddress: string;

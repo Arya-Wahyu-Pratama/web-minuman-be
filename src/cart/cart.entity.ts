@@ -17,5 +17,5 @@ export class Cart {
   user: User;
 
   @Column()
-  userId: number; // Tetap butuh userId untuk query cepat
+  userId: number;
 }

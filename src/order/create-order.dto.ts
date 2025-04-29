@@ -1,4 +1,3 @@
-// src/order/create-order.dto.ts
 import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 export class CreateOrderDto {
@@ -12,7 +11,7 @@ export class CreateOrderDto {
 
   @IsString()
   @IsNotEmpty()
-  paymentMethod: string;  // Menambahkan paymentMethod di DTO
+  paymentMethod: string;
 
   @IsString()
   @IsNotEmpty()

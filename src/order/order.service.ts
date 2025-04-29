@@ -4,7 +4,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Order } from './order.entity';
 import { OrderItem } from './order-item.entity';
-import { CartService } from 'src/cart/cart.service'; // Ensure this import is correct
+import { CartService } from 'src/cart/cart.service'; 
 import { CreateOrderDto } from './create-order.dto';
 
 @Injectable()
@@ -17,7 +17,6 @@ export class OrderService {
     private readonly cartService: CartService,
   ) {}
 
-  // Create order from cart items
   async createOrder(createOrderDto: CreateOrderDto): Promise<Order> {
     const { userId, totalPrice, paymentMethod, deliveryAddress } = createOrderDto;
 
@@ -29,7 +28,7 @@ export class OrderService {
     const order = new Order();
     order.user = { id: userId } as any;
     order.totalPrice = totalPrice;
-    order.status = 'pending'; // Set order status to pending initially
+    order.status = 'pending'; 
     order.paymentMethod = paymentMethod;
     order.deliveryAddress = deliveryAddress;
 
@@ -49,7 +48,6 @@ export class OrderService {
     return savedOrder;
   }
 
-  // Add the method findOrdersByUser to fetch orders by user ID
   async findOrdersByUser(userId: number): Promise<Order[]> {
     return this.orderRepository.find({
       where: { user: { id: userId } },

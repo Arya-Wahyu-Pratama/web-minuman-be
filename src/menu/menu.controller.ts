@@ -1,6 +1,6 @@
 import { Controller, Post, Body, Get } from '@nestjs/common';
 import { MenuService } from './menu.service';
-import { CreateMenuDto } from './create-menu-dto'; // pastikan path-nya benar
+import { CreateMenuDto } from './create-menu-dto';
 
 @Controller('menus')
 export class MenuController {
@@ -13,6 +13,6 @@ export class MenuController {
 
   @Get()
   async getAllMenus() {
-    return this.menuService.findAll(); // pastikan method ini ada di MenuService
+    return this.menuService.findAll();
   }
 }

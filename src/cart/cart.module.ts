@@ -5,7 +5,7 @@ import { Menu } from '../menu/menu.entity';
 import { User } from '../user/user.entity';
 import { CartController } from './cart.controller';
 import { CartService } from './cart.service';
-import { AuthModule } from '../auth/auth.module'; // untuk akses JwtService
+import { AuthModule } from '../auth/auth.module';
 
 @Module({
   imports: [

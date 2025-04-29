@@ -18,7 +18,7 @@ import { JwtStrategy } from './jwt.strategy';
         global: true,
         secret: configService.get<string>('JWT_SECRET'),
         signOptions: {
-          expiresIn: '1d', // Set expired time for JWT
+          expiresIn: '1d',
         },
       }),
     }),
